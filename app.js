@@ -22,7 +22,7 @@ async.series({
 
 },function(err,results) {
 	if(err)throw err;
-	result = GeoJSON.parse(result, {Point: ['Latitude', 'Longitude'], 'type':'Disaster', 'Magnitude':'Magnitude'});
+	result = GeoJSON.parse(result, {Point: ['Latitude', 'Longitude'], 'Disaster':'type', 'Magnitude':'Magnitude'});
 	console.log(result.length);
     fs.writeFileSync("./result/result.json",JSON.stringify(result));
     
