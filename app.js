@@ -1,5 +1,6 @@
 var async = require('async');
 var http = require('http');
+var GeoJSON = require('geojson');
 
 var finalhandler = require('finalhandler');
 var serveStatic = require('serve-static');
@@ -13,14 +14,18 @@ var EarthQuakeParse = require('./modules/EarthQuakeParse.js');
 var fs = require('fs');
 var Lanslidefile="./result/land.json";
 var Earthquakefile="./result/earth.json";
+var GeoJSONFile="";
 
 async.series({
     a:function(cb){LandSlideParse("https://data.nasa.gov/api/views/9ns5-uuif/rows.json?accessType=DOWNLOAD",Lanslidefile,cb);},
     b:function(cb){EarthQuakeParse("https://raw.githubusercontent.com/infographicstw/global-earthquake/master/quake.json",Earthquakefile,cb);},	
+
 },function(err,results) {
 	if(err)throw err;
+	result = GeoJSON.parse(result, {Point: ['Latitude', 'Longitude'], 'type':'type', 'Magnitude':'Magnitude'});
 	console.log(result.length);
     fs.writeFileSync("./result/result.json",JSON.stringify(result));
+    
 });
 
 
