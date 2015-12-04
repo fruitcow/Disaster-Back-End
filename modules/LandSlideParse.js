@@ -4,7 +4,7 @@ var Lanslidefile="./result/land.json";
 
 var obj;
 var  Landslide =function(latitude,longitude,landslide1){
-	this.type ="Landslide";
+	this.Disaster ="Landslide";
 	this.Latitude=latitude;
 	this.Longitude=longitude;
 	this.Magnitude=landslide1;
