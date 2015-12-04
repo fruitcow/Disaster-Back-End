@@ -8,15 +8,15 @@ var  Earthquake =function(latitude,longitude,Earthquake){
 	this.Latitude=latitude;
 	this.Longitude=longitude;
 
-	if(Earthquake > 7){
+	if(Number(Earthquake) > 7){
 		this.Magnitude = "Extra Large";
-	}else if(Earthquake > 5){
+	}else if(Number(Earthquake) > 5){
 		this.Magnitude = "Very_large";
-	}else if(Earthquake > 4){
+	}else if(Number(Earthquake) > 4){
 		this.Magnitude = "Large";
-	}else if(Earthquake > 3){
+	}else if(Number(Earthquake) > 3){
 		this.Magnitude = "Medium";
-	}else if(Earthquake > 2){
+	}else if(Number(Earthquake) > 2){
 		this.Magnitude = "Small";
 	}else{
 		this.Magnitude = "never";
