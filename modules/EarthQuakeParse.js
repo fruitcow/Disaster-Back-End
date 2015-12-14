@@ -3,7 +3,7 @@ var fs = require('fs')
 
 var obj;
 var Earthquakefile="./result/earth.json";
-var  Earthquake =function(latitude,longitude,Earthquake){
+var  Earthquake =function(longitude,latitude,Earthquake){
 	this.Disaster ="Earthquake";
 	this.Latitude=latitude;
 	this.Longitude=longitude;
