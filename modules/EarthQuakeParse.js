@@ -5,8 +5,8 @@ var obj;
 var Earthquakefile="./result/earth.json";
 var  Earthquake =function(latitude,longitude,Earthquake){
 	this.Disaster ="Earthquake";
-	this.Latitude=latitude;
-	this.Longitude=longitude;
+	this.Latitude=longitude;
+	this.Longitude=latitude;
 
 	if(Number(Earthquake) > 7){
 		this.Magnitude = "Extra Large";
